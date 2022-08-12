@@ -1,0 +1,16 @@
+{
+  "name": "rickandmorty-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Cristian Enrique Paez Valencia",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "jest": "^28.1.3"
+  }
+}
