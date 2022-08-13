@@ -1,4 +1,5 @@
 const axios = require('axios');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const RickAndMorty = async() =>{
     let countLocation = 0
@@ -42,5 +43,21 @@ const RickAndMorty = async() =>{
     }
     countCharacter
 }
-        
+
 RickAndMorty()
+
+const EpisodeLocations = async() =>{
+   
+        for (let i = 1; i <= 3; i++) {
+            var response = (await axios(`https://rickandmortyapi.com/api/episode?page=${i}`)).data.results
+            
+            var res = response.map(a => {
+                return {
+                    episode: a.episode,
+                    name :a.name,
+                    location: a.characters
+            }})
+        res
+        }
+}
+console.log(EpisodeLocations().then(res => res))
