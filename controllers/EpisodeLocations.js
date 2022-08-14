@@ -1,4 +1,6 @@
 const axios = require('axios');
+const { Router } = require('express');
+const router = Router();
 
 const CharactersLocation = async(j) => {
     let url = (await axios(`https://rickandmortyapi.com/api/character/${j}`)).data
@@ -33,4 +35,14 @@ const allEpisodes = async () => {
     return array
 } 
 
-allEpisodes().then(val => console.log(val))
+router.get('/', async(req, res) => {
+    try {
+        let response = await allEpisodes()
+        res.send(response)
+    } catch (error) {
+        res.status(404).send({error})
+    }
+})
+
+
+module.exports = router
