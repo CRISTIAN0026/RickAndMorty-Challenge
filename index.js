@@ -58,7 +58,6 @@ const EpisodeLocations = async(i) =>{
     c.characters.map(async g => 
     {const characterOrigin = await CharactersLocation(g.slice(42)); return characterOrigin})); 
     return {
-        id: c.id,
         name: c.name, 
         episode: c.episode,
         amount: c.characters.length,    
