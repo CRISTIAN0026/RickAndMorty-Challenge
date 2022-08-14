@@ -1,7 +1,5 @@
 const axios = require('axios');
-const { Router } = require('express');
-const router = Router();
-const RickAndMorty = require('./CharCounters.js/CharCounter');
+const RickAndMorty = require('./CharCounter.js');
 const start = process.hrtime()
 
 const CharactersLocation = async(j) => {
@@ -40,30 +38,23 @@ const EpisodeLocations = async(i) =>{
 }
 
 const allEpisodes = async () => {
+    let count = await RickAndMorty()
     let array = []
     for (let i = 1; i <= 3; i++) {
     let rat = await EpisodeLocations(i)
     array.push(rat)
     }
     return {
-        response: await RickAndMorty(),
+        response: count,
         exercise_name: "Episode locations",
-        time: `${process.hrtime(start)[0]} ms`,
-        in_time: true,
+        time: `${process.hrtime(start)[0]}s ${process.hrtime(start)[1]/1000000} ms`,
+        in_time: process.hrtime(start)[0] > 3 ? false : true,
         results: array
     }
 } 
 
 
 
-router.get('/', async(req, res) => {
-    try {
-        let response = await allEpisodes()
-        res.status(200).send(response)
-    } catch (error) {
-        res.status(404).send({error})
-    }
-})
-
-
-module.exports = router
+module.exports = {
+    allEpisodes
+}

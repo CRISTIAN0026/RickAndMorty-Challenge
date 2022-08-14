@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const router = Router();
-const EpisodeLocation = require('./controllers/EpisodeLocations');
+const allEpisodes = require('./allEpisodes');
 
 
-router.use('/', EpisodeLocation)
+router.use('/', allEpisodes)
 
 module.exports = router;
 

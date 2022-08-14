@@ -46,15 +46,16 @@ const CharCounterCharacters = async() => {
     return countCharacter
 } 
 
+
 const RickAndMorty = async() => { 
     return {
         exercise_name: "Char counter",
-        time: `${process.hrtime(star)[0]} ms`,
-        in_time: true,
+        time: `${process.hrtime(star)[0]}s ${process.hrtime(star)[1]/1000000} ms`,
+        in_time: process.hrtime(star)[0] > 3 ? false : true,
         results: [
             {
                 char: "l",
-                count:  await CharCounterLocation(),
+                count: await CharCounterLocation(),
                 resource: "location"
             },
             {

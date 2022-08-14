@@ -1,6 +1,6 @@
 const express = require('express');
 const server = express();
-const route = require('./index1');
+const route = require('./routes/index1');
 
 
 server.use('/', route);
