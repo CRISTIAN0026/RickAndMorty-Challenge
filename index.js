@@ -43,7 +43,7 @@ const RickAndMorty = async() =>{
     countCharacter
 }
 
-// RickAndMorty()
+RickAndMorty()
 
 const CharactersLocation = async(j) => {
     let url = (await axios(`https://rickandmortyapi.com/api/character/${j}`)).data
@@ -78,7 +78,7 @@ const allEpisodes = async () => {
     return array
 } 
 
-//allEpisodes().then(val => console.log(val))
+allEpisodes().then(val => console.log(val))
 
 
 
