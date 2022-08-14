@@ -1,5 +1,5 @@
 const axios = require('axios');
-const RickAndMorty = require('./CharCounter.js');
+const { RickAndMorty } = require('./CharCounter.js');
 const start = process.hrtime()
 
 const CharactersLocation = async(j) => {

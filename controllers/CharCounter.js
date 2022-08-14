@@ -72,4 +72,9 @@ const RickAndMorty = async() => {
     }
 }
 
-module.exports = RickAndMorty;
+module.exports = {
+    RickAndMorty,
+    CharCounterCharacters,
+    CharCounterEpisode,
+    CharCounterLocation
+}
