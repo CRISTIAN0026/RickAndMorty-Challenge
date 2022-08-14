@@ -56,5 +56,10 @@ const allEpisodes = async () => {
 
 
 module.exports = {
-    allEpisodes
+    allEpisodes,
+    CharactersLocation,
+    Characters1,
+    Characters2,
+    CharactersEpisodeLocation,
+    EpisodeLocations
 }
